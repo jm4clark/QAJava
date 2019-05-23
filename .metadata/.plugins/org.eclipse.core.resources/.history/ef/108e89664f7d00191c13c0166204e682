@@ -1,0 +1,11 @@
+
+public class Map extends Media{
+private String coordinates;
+public Map(int publishDate, int pageCount, String author, String title, String coordinatese) {
+	super(publishDate, pageCount, author, title);
+	this.coordinates = coordinates;	
+	counter++;
+	this.ID = "N" +counter;
+}
+
+}

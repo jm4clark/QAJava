@@ -1,0 +1,12 @@
+
+public class Car extends Vehicle {
+
+	private boolean automatic;
+
+	public Car(int a, String b, int c, int d, double e, boolean f) {
+		super(a, b, c, d, e);
+		automatic = f;
+	}
+	
+	public void OpenBoot() {};
+}

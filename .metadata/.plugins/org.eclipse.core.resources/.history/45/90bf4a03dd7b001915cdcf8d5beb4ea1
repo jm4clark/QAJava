@@ -1,0 +1,16 @@
+
+public class Person {
+	
+String name;
+int age;
+String jobTitle;
+public Person(String name1, int age1, String jobTitle1) {
+		name = name1;
+		age = age1;
+		jobTitle = jobTitle1;
+	}
+public String returnAllThree()
+{
+	return(name + age + jobTitle);
+}
+}

@@ -1,0 +1,12 @@
+
+public class Motorbike extends Vehicle {
+	public Motorbike(String a, int b, int c, double d) {
+		super(a, b, c, d);
+		this.wheels = 2;
+	}
+
+	public void doAWheelie() {
+		System.out.println("Wheeee!");
+	}
+
+}

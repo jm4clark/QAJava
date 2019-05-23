@@ -1,0 +1,13 @@
+
+public class Motorbike extends Vehicle {
+	private
+
+	public Motorbike(int a, String b, int c, int d) {
+		super(a, b, c, d);
+	}
+
+	public void doAWheelie() {
+
+	}
+
+}

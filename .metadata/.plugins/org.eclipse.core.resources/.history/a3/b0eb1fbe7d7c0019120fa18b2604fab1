@@ -1,0 +1,12 @@
+
+public class Fish extends Animal{
+
+	public Fish(int legs, String colour, int age) {
+		super(legs, colour, age);
+	}
+	
+	public void swim() {
+		System.out.println("Keep on swimming.");
+	}
+
+}

@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Runner {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("Enter 2 numbers:");
+		
+		int input1 = s.nextInt();
+		int input2 = s.nextInt();
+		
+		
+		
+		System.out.println("Enter operator:");
+		
+		String operator = s.next();
+		
+		switch(operator) {
+		case "+":
+			System.out.println("Result: " + addNums(input1, input2));
+		
+		case "*":
+			System.out.println("Result: " + multiplyNums(input1, input2));
+		}
+			
+	}
+	
+	static int addNums(int num1, int num2) {
+		int result = num1 + num2;
+		return result;
+	}
+	
+	static int multiplyNums(int num1, int num2) {
+		int result = num1 * num2;
+		return result;
+	}
+}

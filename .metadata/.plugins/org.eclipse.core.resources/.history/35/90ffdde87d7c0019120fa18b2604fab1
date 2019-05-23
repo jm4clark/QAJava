@@ -1,0 +1,38 @@
+
+public class Animal {
+	protected int legs;
+	protected String colour;
+	protected int age;
+	protected int hunger;
+	
+	public Animal(int legs, String colour, int age) {
+		this.legs = legs;
+		this.colour = colour;
+		this.age = age;
+	}
+	
+	public void eat(String food) {
+		hunger--;
+	};
+	
+	public int getLegs() {
+		return legs;
+	}
+	public void setLegs(int legs) {
+		this.legs = legs;
+	}
+	public String getColour() {
+		return colour;
+	}
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	
+}

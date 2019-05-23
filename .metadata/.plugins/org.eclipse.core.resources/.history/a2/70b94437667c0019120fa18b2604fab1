@@ -1,0 +1,11 @@
+
+public class Motorbike extends Vehicle {
+	public Motorbike(int a, String b, int c, int d, double e) {
+		super(a, b, c, d, e);
+	}
+
+	public void doAWheelie() {
+
+	}
+
+}

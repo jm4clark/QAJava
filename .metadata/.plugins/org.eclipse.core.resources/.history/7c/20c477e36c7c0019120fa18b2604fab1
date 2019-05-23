@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class PersonManager {
+	private ArrayList<Person> listOfPeople = new ArrayList<Person>();
+
+	public void addPerson(Person p) {listOfPeople.add(p);}
+	public ArrayList<Person> getList(){ return listOfPeople;}
+	
+	public String listAllPeople() {
+		String result = "";
+		
+		for(Person i : listOfPeople)
+		{
+			result += i.returnAllThree() + "\n";
+		}
+		
+		return result;
+	}
+	
+	public Person findPerson(String name)
+	{
+		for(Person i : listOfPeople) {
+			if(i.getName().equals(name))
+			{
+				return i;
+			}
+		}
+		
+		return null;
+	}
+}

@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+
+public class Library {
+	ArrayList<Media> listOfMedia = new ArrayList<Media>();	
+	ArrayList<User> listOfUsers = new ArrayList<User>();
+	
+	public void addUser(User u) {
+		listOfUsers.add(u);
+	}
+	public void addUsers(ArrayList<User> list)	{
+		listOfUsers.addAll(list);
+	}
+	public void removeUserByID(int ID) {
+		listOfUsers.removeIf(i -> i.getID() == ID);
+	}
+	
+	public ArrayList<Media> sortMediaByName(boolean asc) {
+		return listOfMedia.sorted(Comparator.comparing(i->i.getTitle()));
+	}
+	
+	public ArrayList<Media> sortSelectByName(String selection, boolean asc) {
+		
+	}
+	
+}

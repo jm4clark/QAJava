@@ -1,0 +1,10 @@
+
+public class Vehicle {
+private int wheels;
+private String colour;
+private int topSpeed;
+private int ID;
+
+
+
+}

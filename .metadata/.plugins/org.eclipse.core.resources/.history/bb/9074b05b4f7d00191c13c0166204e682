@@ -1,0 +1,6 @@
+
+public class Map extends Media{
+private String coordinates;
+
+
+}

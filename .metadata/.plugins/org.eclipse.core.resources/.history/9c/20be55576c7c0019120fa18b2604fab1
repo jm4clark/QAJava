@@ -1,0 +1,13 @@
+
+public class Car extends Vehicle {
+
+	private boolean automatic;
+
+	public Car(int wheels, String colour, int topSpeed, int ID, double price, boolean automatic) {
+		super(wheels, colour, topSpeed, ID, price);
+		this.automatic = automatic;
+	}
+
+	public void OpenBoot() {
+	};
+}

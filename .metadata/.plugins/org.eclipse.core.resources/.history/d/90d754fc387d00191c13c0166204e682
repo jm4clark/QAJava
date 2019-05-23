@@ -1,0 +1,65 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
+public class Library {
+	ArrayList<Media> listOfMedia = new ArrayList<Media>();	
+	ArrayList<User> listOfUsers = new ArrayList<User>();
+	
+	public void addUser(User u) {
+		listOfUsers.add(u);
+	}
+	public void addUsers(ArrayList<User> list)	{
+		listOfUsers.addAll(list);
+	}
+	public void removeUserByID(int ID) {
+		listOfUsers.removeIf(i -> i.getID() == ID);
+	}
+	
+	public ArrayList<Media> sortMediaBy(String field, boolean asc)
+	{
+//		if(asc)
+//			return (ArrayList<Media>) listOfMedia.stream()
+//					.sorted(Comparator.comparing(i->i.getDeclaredField(field).toString()))
+//					.collect(Collectors.toList());
+		
+		return null;
+	}
+	
+	public ArrayList<Media> sortMediaByName(boolean asc) {
+		if (asc)
+			return (ArrayList<Media>) listOfMedia.stream()
+					.sorted(Comparator.comparing(Media::getTitle))
+					.collect(Collectors.toList());
+		
+		return (ArrayList<Media>) listOfMedia.stream()
+				.sorted(Comparator.comparing(Media::getTitle).reversed())
+				.collect(Collectors.toList());
+	}
+	
+	public ArrayList<Media> sortSelectByName(String selection, boolean asc) {
+		if (asc)
+			return (ArrayList<Media>) listOfMedia.stream()
+					.filter(i->i.getType().equals(selection))
+					.sorted(Comparator.comparing(Media::getTitle))
+					.collect(Collectors.toList());
+		
+		return (ArrayList<Media>) listOfMedia.stream()
+				.filter(i->i.getType().equals(selection))
+				.sorted(Comparator.comparing(Media::getTitle).reversed())
+				.collect(Collectors.toList());
+	}
+	
+	public void registerUser(String name, int age, boolean hasLibraryCard)	{
+		User user = new User(name, age, hasLibraryCard);
+		listOfUsers.add(user);
+	}
+	
+	public void deleteUser(int ID)	{
+		listOfUsers.removeIf(i->i.getID() == ID);
+	}
+	
+	public void deleteUser(String name)	{
+		
+	}
+}

@@ -1,0 +1,11 @@
+
+public class User {
+	private static int counter = 0;
+	private int ID;
+
+	public User() {
+		counter++;
+		ID = counter;
+	}
+
+}

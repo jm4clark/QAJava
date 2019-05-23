@@ -1,0 +1,8 @@
+
+public class Newspaper extends Media {
+	private String headline;
+	public Newspaper(String type, int publishDate, int pageCount, String author, String title) {
+		super(type, publishDate, pageCount, author, title);
+	}
+
+}

@@ -1,0 +1,15 @@
+
+public class Vehicle {
+	private int wheels;
+	private String colour;
+	private int topSpeed;
+	private int ID;
+
+	public Vehicle(int a, String b, int c, int d) {
+		wheels = a;
+		colour = b;
+		topSpeed = c;
+		ID = d;
+	}
+
+}

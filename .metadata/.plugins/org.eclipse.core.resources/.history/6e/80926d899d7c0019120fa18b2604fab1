@@ -1,0 +1,14 @@
+
+public class Motorbike extends Vehicle {
+
+
+	public Motorbike(String colour, int topSpeed, int ID, double price, boolean isFixed) {
+		super(colour, topSpeed, ID, price, isFixed);
+		this.wheels = 2;
+	}
+
+	public void doAWheelie() {
+		System.out.println("Wheeee!");
+	}
+
+}

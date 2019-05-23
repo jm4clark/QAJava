@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String hello;
+		hello = "Hello World"; 
+		System.out.println(hello);
+		Scanner user_input = new Scanner( System.in );
+		hello = user_input.next();
+		System.out.println(hello);
+	}
+
+}

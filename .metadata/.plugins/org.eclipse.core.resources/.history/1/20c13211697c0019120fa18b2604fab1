@@ -1,0 +1,23 @@
+
+public class Person {
+	private String name;
+	private int age;
+	private String jobTitle;
+
+	public Person(String name1, int age1, String jobTitle1) {
+		name = name1;
+		age = age1;
+		jobTitle = jobTitle1;
+	}
+
+	public String returnAllThree() {
+		return (name + ", " + age + ", " + jobTitle);
+	}
+	
+	public String getName() { return name; }
+	public void setName(String n) { name = n; }
+	public int getAge() { return age; }
+	public void setAge(int a) { age = a; }
+	public String getJob() { return jobTitle; }
+	public void setJob(String j) { jobTitle = j; }
+}

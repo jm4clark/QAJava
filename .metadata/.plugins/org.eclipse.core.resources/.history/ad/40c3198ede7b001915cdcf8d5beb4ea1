@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+public class Application {
+	public static void main(String[] args) {
+		Person Jeff = new Person("Jeff", 21, "Bankman");
+		System.out.println(Jeff.returnAllThree());
+		
+		Person Steve = new Person("Jeff", 22, "Sales");
+		Person Arnold = new Person("Arnorld", 23, "Software Engineer");
+		
+		ArrayList<Person> people = new ArrayList<Person>();
+		people.add(Jeff);
+		people.add(Steve);
+		people.add(Arnold);
+		
+		System.out.println(listAllPeople(people));
+	}
+	
+	
+	
+	public static String listAllPeople(ArrayList<Person> list)
+	{
+		String result = "";
+		
+		for(Person i : list)
+		{
+			result += i.returnAllThree();
+		}
+		
+		return result;
+	}
+}

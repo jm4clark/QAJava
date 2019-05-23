@@ -1,0 +1,26 @@
+
+public class Car extends Vehicle {
+
+	private boolean automatic;
+	private int currentGear = 1;
+
+	public Car(int wheels, String colour, int topSpeed, int ID, double price, boolean automatic) {
+		super(wheels, colour, topSpeed, ID, price);
+		this.automatic = automatic;
+	}
+
+	public void OpenBoot() {
+	};
+	
+	public String ChangeGear(int gear) {
+		if(this.automatic)
+			return "Can't change gear; it's an automatic!";
+		else if (this.currentGear++ == gear || this.currentGear-- == gear)
+		{
+			return "Gear changed! (" + gear + ")";
+		}
+		
+		return "Can't change gear.";
+			
+	}
+}

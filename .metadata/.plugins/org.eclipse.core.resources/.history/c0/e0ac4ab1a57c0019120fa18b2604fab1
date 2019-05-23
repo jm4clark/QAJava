@@ -1,0 +1,13 @@
+import java.util.ArrayList;
+
+public class Library {
+	ArrayList<Media> listOfMedia = new ArrayList<Media>();	
+	ArrayList<User> listOfUsers = new ArrayList<User>();
+	
+	public void addUser(User u) {
+		listOfUsers.add(u);
+	}
+	public void removeUserByID(int ID) {
+		listOfUsers.removeIf(i -> i.getID() == ID);
+	}
+}

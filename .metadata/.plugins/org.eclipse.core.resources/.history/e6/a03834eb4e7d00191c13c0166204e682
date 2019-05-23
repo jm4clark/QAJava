@@ -1,0 +1,15 @@
+
+public class Newspaper extends Media implements Readable{
+	private String paperName;
+	public Newspaper(int publishDate, int pageCount, String author, String title, String paperName) {
+		super(publishDate, pageCount, author, title);
+		this.paperName = paperName;		
+	}
+	
+	@Override
+	public void read() {
+		System.out.println("You read the newspaper!");
+		
+	}
+
+}

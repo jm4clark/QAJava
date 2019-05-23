@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Runner {
+	public static void main(String[] args) {
+		int[] x = new int[100];
+
+		for (int i = 0; i < 100; i++) {
+			x[i] = i + 1;
+			//System.out.println(x[i]);
+		}
+		
+		List<Integer> y = new ArrayList<Integer>();
+		
+		for (int i = 100; i <= 199; i++) {
+			y.add(i - 100, i);
+		}
+		
+		for (int i = 0; i < y.size(); i++) {
+			System.out.println((int) y.get(i) * 10);
+		}
+		
+		for(int i : y)
+		{
+			//System.out.println(y.get(i));
+		}
+		
+	}
+}

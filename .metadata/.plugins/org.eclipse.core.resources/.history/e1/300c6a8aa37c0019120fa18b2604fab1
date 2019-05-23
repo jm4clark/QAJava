@@ -1,0 +1,9 @@
+
+public class Hovercraft extends Vehicle {
+
+	public Hovercraft(String colour, int topSpeed, int ID, double price, boolean isFixed) {
+		super(colour, topSpeed, ID, price, isFixed);
+		this.wheels = 0;
+	}
+
+}

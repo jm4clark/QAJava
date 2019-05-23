@@ -1,0 +1,17 @@
+
+public class Vehicle {
+	protected int wheels;
+	protected String colour;
+	protected int topSpeed;
+	protected int ID;
+	protected double price;
+
+	public Vehicle(int a, String b, int c, int d, double e) {
+		wheels = a;
+		colour = b;
+		topSpeed = c;
+		ID = d;
+		price = e;
+	}
+
+}

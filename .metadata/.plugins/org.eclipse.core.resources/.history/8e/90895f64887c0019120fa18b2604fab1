@@ -1,0 +1,47 @@
+
+public class Vehicle {
+	protected int wheels;
+	protected String colour;
+	protected int topSpeed;
+	protected int ID;
+	protected double price;
+	
+	//protected static int IDcount = 0;
+
+	public Vehicle(int wheels, String colour, int topSpeed, int ID, double price) {
+		this.wheels = wheels;
+		this.colour = colour;
+		this.topSpeed = topSpeed;
+		this.ID = ID;
+		this.price = price;
+	}
+	
+	
+	
+	@Override
+	public String toString()
+	{
+		return "ID: " + ID + ", Colour: " + colour;
+	}
+
+	public int getWheels() { return wheels;	}
+
+	public void setWheels(int wheels) {	this.wheels = wheels; }
+
+	public String getColour() {	return colour; }
+
+	public void setColour(String colour) { this.colour = colour; }
+
+	public int getTopSpeed() { return topSpeed; }
+
+	public void setTopSpeed(int topSpeed) { this.topSpeed = topSpeed; }
+
+	public int getID() { return ID;	}
+
+	public void setID(int iD) {	ID = iD; }
+
+	public double getPrice() { return price; }
+
+	public void setPrice(double price) { this.price = price; }
+
+}

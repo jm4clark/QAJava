@@ -1,0 +1,9 @@
+
+public class Truck extends Vehicle {
+
+	public Truck(String colour, int topSpeed, int ID, double price, int wheels) {
+		super(colour, topSpeed, ID, price);
+		this.wheels = wheels;
+	}
+
+}

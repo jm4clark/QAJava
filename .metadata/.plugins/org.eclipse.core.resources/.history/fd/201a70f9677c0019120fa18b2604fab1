@@ -1,0 +1,8 @@
+import java.util.ArrayList;
+
+public class PersonManager {
+private ArrayList<Person> listOfPeople = new ArrayList<Person>();
+
+public void addPerson(Person p) {listOfPeople.add(p);}
+public ArrayList<Person> getList(){ return listOfPeople;}
+}

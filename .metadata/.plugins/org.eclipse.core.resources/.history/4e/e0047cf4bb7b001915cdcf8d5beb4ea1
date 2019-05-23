@@ -1,0 +1,107 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Runner {
+	public static void main(String[] args) {
+		ArrayList<Integer> ints = new ArrayList<Integer>();
+		for (int i = 0; i <= 10; i++) {
+			ints.add(i);
+		}
+
+		System.out.println(ints);
+
+		ArrayList<String> listOstrings = new ArrayList<String>();
+		listOstrings.add("one");
+		listOstrings.add("two");
+		listOstrings.add("three");
+		listOstrings.add("three");
+		listOstrings.add("two");
+		listOstrings.add("one");
+
+		System.out.println(numOfWords(listOstrings, "two"));
+
+		System.out.println(sumOfList(ints));
+
+		System.out.println(largestNum(ints));
+
+		System.out.println(removeOdds(ints));
+
+		ArrayList<Integer> randomInts = new ArrayList<Integer>();
+		randomInts.add(3);
+		randomInts.add(1);
+		randomInts.add(2);
+
+		System.out.println(sortListAsc(randomInts));
+
+	}
+
+	public static boolean lookForNumber(ArrayList<Integer> listInput, int number) {
+		return listInput.contains(number);
+	}
+
+	public static ArrayList<Integer> multiplyByTen(ArrayList<Integer> listInput) {
+		ArrayList<Integer> newList = new ArrayList<Integer>();
+		for (int i : listInput) {
+			if (i % 5 == 0) {
+				newList.add(i * 10);
+			} else
+				newList.add(i);
+		}
+
+		return newList;
+	}
+
+	public static int numOfWords(ArrayList<String> listInput, String word) {
+		int result = 0;
+		for (String i : listInput) {
+			if (i == word) {
+				result++;
+			}
+		}
+
+		return result;
+	}
+
+	public static int sumOfList(ArrayList<Integer> listInput) {
+		int result = 0;
+		for (int i : listInput) {
+			result += i;
+		}
+
+		return result;
+	}
+
+	public static int largestNum(ArrayList<Integer> listInput) {
+		int result = 0;
+
+		for (int i : listInput) {
+			if (i > result)
+				result = i;
+		}
+
+		return result;
+	}
+
+	public static ArrayList<Integer> removeOdds(ArrayList<Integer> listInput) {
+		ArrayList<Integer> newList = new ArrayList<Integer>();
+
+		for (int i : listInput) {
+			if (i % 2 == 0) {
+				newList.add(i);
+			}
+			
+		}
+
+		return newList;
+	}
+
+	public static ArrayList<Integer> sortListAsc(ArrayList<Integer> listInput) {
+		ArrayList<Integer> newList = new ArrayList<Integer>();
+
+		newList = listInput;
+
+		Collections.sort(newList);
+
+		return newList;
+	}
+}

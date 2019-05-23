@@ -1,0 +1,16 @@
+
+public class Dog extends Animal {
+
+	private String breed;
+	
+	public Dog(int legs, String colour, int age, String breed) {
+		super(legs, colour, age);
+	}
+	
+	public void eat(String food)
+	{
+		System.out.println("Tasty!");
+		hunger--;
+	}
+	
+}

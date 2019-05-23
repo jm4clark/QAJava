@@ -1,0 +1,21 @@
+
+public class Runner {
+	public static void main(String[] args) {
+		
+		System.out.println(q7(9,100));
+		
+	}
+	
+	public static int q7(int rangeLow, int rangeHigh)
+	{
+		int counter = 0;
+		
+		for(int i = rangeLow; i <= rangeHigh; i++)
+		{
+			if(i%5 == 0)
+				counter++;
+		}
+		
+		return counter;
+	}
+}

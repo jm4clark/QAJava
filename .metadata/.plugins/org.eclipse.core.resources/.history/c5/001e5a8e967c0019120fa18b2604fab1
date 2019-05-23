@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class Garage {
+	private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
+
+	public void addVehicle(Vehicle v) {
+		vehicles.add(v);
+	}
+	
+	public void addVehicles(ArrayList<Vehicle> list){
+		vehicles.addAll(list);
+	}
+	public void removeByID(int ID) {
+		vehicles.removeIf(i->i.ID == ID);
+	}
+	public void removeByType() {}
+	
+	public String fixVehicle(int ID) {
+		(vehicles.stream().filter(i->i.ID == ID)).setFixed(true);
+		
+		return "Vehicle was fixed. Bill is " + calculateBill()
+	}
+	
+	private double calculateBill(Vehicle v)
+	{
+		switch v.
+	}
+	
+	public ArrayList<Vehicle> getList() {return vehicles;}
+	
+}

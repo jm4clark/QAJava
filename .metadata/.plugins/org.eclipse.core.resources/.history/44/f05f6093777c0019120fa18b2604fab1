@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Application {
+	public static void main(String[] args) {
+		PersonManager manager = new PersonManager();
+		Person p1 = new Person("Jeff", 21);
+		System.out.println(p1);
+		
+		Person p2 = new Person("Steve", 22, "Sales");
+		Person p3 = new Person("Arnold", 23, "Software Engineer");
+		
+		manager.addPerson(p1);
+		manager.addPerson(p2);
+		manager.addPerson(p3);
+		
+		System.out.println(manager.listAllPeople());
+		
+		System.out.println("Jeff's details are: " + manager.findPerson("Jeff"));
+		
+		Garage garage = new Garage();
+		
+		Car car1 = new Car(4, "red", 80, 1, 12000, false);
+		garage.addVehicle(car1);
+		
+		System.out.println(car1.ChangeGear(2));
+		
+		System.out.println(car1.ChangeGear(5));
+	}
+	
+	
+	public static boolean check(int a, int b, int c) {
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		nums.addAll(Arrays.asList(a,b,c));
+		return nums.stream().filter(i->i>=13 && i <= 19).count() >= 2;
+	}
+}

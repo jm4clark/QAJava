@@ -1,0 +1,8 @@
+
+public class Animal {
+	private int legs;
+	private String colour;
+	private int age;
+	
+	
+}

@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+
+public class Runner {
+	public static void main(String[] args) {
+		ArrayList<Integer> ints = new ArrayList<Integer>();
+		for (int i = 0; i <= 10; i++) {
+			ints.add(i);
+		}
+
+		System.out.println(ints);
+		
+		ArrayList<String> listOstrings = new ArrayList<String>();
+		listOstrings.add("one");
+		listOstrings.add("two");
+		listOstrings.add("three");
+		
+		
+		System.out.println(numOfWords(listOstrings, "two"));
+		
+	}
+
+	public static boolean lookForNumber(ArrayList<Integer> listInput, int number) {
+		return listInput.contains(number);
+	}
+
+	public static ArrayList<Integer> multiplyByTen(ArrayList<Integer> listInput) {
+		ArrayList<Integer> newList = new ArrayList<Integer>();
+		for (int i : listInput) {
+			if (i % 5 == 0) {
+				newList.add(i * 10);
+			} else
+				newList.add(i);
+		}
+
+		return newList;
+	}
+
+	public static int numOfWords(ArrayList<String> listInput, String word) {
+		int result = 0;
+		for (String i : listInput) {
+			if (i == word) {
+				result++;
+			}
+		}
+
+		return result;
+	}
+}

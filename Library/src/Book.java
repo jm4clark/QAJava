@@ -30,4 +30,17 @@ public class Book extends Media implements Readable{
 	public void read() {
 		System.out.println("You read " + this.getTitle() + "!");		
 	}
+	
+	
+	public void updateAllInfo(int publishDate, int pageCount, String author, String title, boolean hardback) {
+		super.updateAllInfo(publishDate, pageCount, author, title);
+		this.hardback = hardback;
+	}
+	
+	public void rollbackCounter()
+	{
+		counter--;
+	}
+
+	
 }

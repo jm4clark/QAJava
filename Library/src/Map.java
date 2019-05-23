@@ -1,5 +1,5 @@
 
-public class Map extends Media {
+public class Map extends Media implements Readable{
 	private String coordinates;
 	private static int counter = 0;
 
@@ -13,6 +13,17 @@ public class Map extends Media {
 	
 	public String toString() {
 		return super.toString() + ", Co-ordinates: " + coordinates;
+	}
+
+	@Override
+	public void read() {
+		System.out.println("You read the map!");
+		
+	}
+	
+	public void updateAllInfo(int publishDate, int pageCount, String author, String title, String coordinates) {
+		super.updateAllInfo(publishDate, pageCount, author, title);
+		this.coordinates = coordinates;
 	}
 
 }

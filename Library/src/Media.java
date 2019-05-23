@@ -19,6 +19,14 @@ public class Media {
 		this.checkedOut = false;
 	}
 	
+	public void updateAllInfo(int publishDate, int pageCount, String author, String title) {
+		this.publishDate = publishDate;
+		this.pageCount = pageCount;
+		this.author = author;
+		this.title = title;
+		this.checkedOut = false;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -65,7 +73,7 @@ public class Media {
 	}
 	
 	public String toString() {
-		return "\nID: " + this.getID() + ", Name: " + this.getTitle() 
+		return "ID: " + this.getID() + ", Name: " + this.getTitle() 
 		+ ", Author: " + this.getAuthor() + ", Checked out: " + this.isCheckedOut();
 	}
 }

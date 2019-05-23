@@ -23,18 +23,40 @@ public class Library {
 		}
 	}
 	
-	public void checkOut(String mediaID, int userID) {
-//		if(media.isCheckedOut()) {
-//			System.out.println("Already checked out.");
-//		}
-//		else if(user.getWithdrawals().stream().count() < user.getMaxWithdraws()) {
-//			media.setCheckedOut(true);
-//			user.addWithdrawal(media);
-//		}
-//		else {
-//			System.out.println("User has already checked out the maximum amount.");
-//		}
+	public void checkOut(String ID, User user) {
+
+		Media m = (Media) listOfMedia.stream().filter(i->i.ID.equals(ID)).findAny().orElse(null);
+		if (m.isCheckedOut()){
+			System.out.println("Already checked out.");
+		}
+		else if(user.getWithdrawals().stream().count() < user.getMaxWithdraws()) {
+			m.setCheckedOut(true);
+			user.addWithdrawal(m);
+		}
+		else {
+			System.out.println("User has already checked out the maximum amount.");
+		}
 	}
+	
+	
+	public void checkOut(String mediaID, int userID) {
+		Media m = (Media) listOfMedia.stream().filter(i->i.ID.equals(mediaID)).findAny().orElse(null);
+		User u = (User) userDB.getAllUsers().stream().filter(i->i.getID() == userID).findAny().orElse(null);
+		
+		if (m.isCheckedOut()){
+			System.out.println(m.getTitle() + " is already checked out.");
+		}
+		else if(u.getWithdrawals().stream().count() < u.getMaxWithdraws()) {
+			m.setCheckedOut(true);
+			u.addWithdrawal(m);
+			System.out.println(u.getName() + " has checked out " + m.getTitle());
+		}
+		else {
+			System.out.println("User has already checked out the maximum amount.");
+		}
+		
+	}
+	
 	public void checkIn(Media media, User user) {
 		if(!media.isCheckedOut()) {
 			System.out.println("Already checked in.");
@@ -43,18 +65,41 @@ public class Library {
 		media.setCheckedOut(false);
 	}
 	
-	public void updateMedia(String ID, Media newMedia) {
+	public void checkIn(String mediaID, int userID) {
+		Media m = (Media) listOfMedia.stream().filter(i->i.ID.equals(mediaID)).findAny().orElse(null);
+		User u = (User) userDB.getAllUsers().stream().filter(i->i.getID() == userID).findAny().orElse(null);
 		
+		if(!m.isCheckedOut()) {
+			System.out.println("Already checked in.");
+		}
+		u.getWithdrawals().removeIf(i->i == m);
+		m.setCheckedOut(false);
+		System.out.println(u.getName() + " checked in " + m.getTitle());
 	}
 	
-	public void updateMedia(Media media, Media newMedia) {
-		newMedia.ID = media.ID;
-		for(int i = 0; i < listOfMedia.size(); i++) {			
-			if(listOfMedia.get(i) == media) {
+	public void updateMedia(String ID, Media newMedia) {
+		newMedia.ID = ID;
+		for(int i = 0; i < listOfMedia.size(); i++) {
+			if(listOfMedia.get(i).getID().equals(ID)) {
 				listOfMedia.remove(i);
 				listOfMedia.add(i, newMedia);
 			}
 		}
+//		Media m = (Media) listOfMedia.stream().filter(i->i.ID.equals(ID)).findAny().orElse(null);
+//		newMedia.ID = ID;
+//		listOfMedia.add(listOfMedia.stream().indexOf(m).findAny().orElse(null));
+//		listOfMedia.remove(m);
+	}
+	
+	public void updateMedia(Media media, Media newMedia) {
+//		newMedia.ID = media.ID;
+//		for(int i = 0; i < listOfMedia.size(); i++) {			
+//			if(listOfMedia.get(i).equals(media)) {
+//				listOfMedia.remove(i);
+//				listOfMedia.add(i, newMedia);
+//			}
+//		}
+		
 	}
 	
 	//fix this

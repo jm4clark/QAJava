@@ -21,8 +21,7 @@ public class App {
 		
 		library.addMedia(m1);
 		
-		Book b1new = new Book(1996, 116, "J.K. Rowling", "Harry Potter", true);
-		library.updateMedia("B1", b1new);
+		library.updateMedia("B1", 1996, 116, "J.K. Rowling", "Harry Potter", "true");
 		Book b3 = new Book(1997, 180, "J.K. Rowling", "Harry Potter 2: Electic Boogaloo", true);
 		library.addMedia(b3);
 		System.out.println(library.getAllMedia());
@@ -46,16 +45,5 @@ public class App {
 		
 		b3.read();
 		m1.read();
-		
-		check("HelloWorld");
-	}
-	
-	public static void check(String s) {
-		if(s.length()%2 == 0) {
-			System.out.println(s.substring(0, s.length()/2));
-		}
-		else {
-			System.out.println(s.substring(s.length()/2,s.length()/2 +1));
-		}
 	}
 }

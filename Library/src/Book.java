@@ -34,6 +34,7 @@ public class Book extends Media implements Readable{
 	
 	public void updateAllInfo(int publishDate, int pageCount, String author, String title, boolean hardback) {
 		super.updateAllInfo(publishDate, pageCount, author, title);
+		
 		this.hardback = hardback;
 	}
 	

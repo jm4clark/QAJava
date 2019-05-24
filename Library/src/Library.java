@@ -77,30 +77,24 @@ public class Library {
 		System.out.println(u.getName() + " checked in " + m.getTitle());
 	}
 	
-	public void updateMedia(String ID, Media newMedia) {
-		newMedia.ID = ID;
-		for(int i = 0; i < listOfMedia.size(); i++) {
-			if(listOfMedia.get(i).getID().equals(ID)) {
-				listOfMedia.remove(i);
-				listOfMedia.add(i, newMedia);
-			}
+	public void updateMedia(String ID,int publishDate, int pageCount, String author, String title, String extra) {
+		Media m = (Media) listOfMedia.stream().filter(i->i.ID.equals(ID)).findAny().orElse(null);
+		if(ID.substring(0,1).equals("B")) {
+			((Book) m).updateAllInfo(publishDate, pageCount, author, title, Boolean.valueOf(extra));
+			System.out.println("Updated book!");
 		}
-//		Media m = (Media) listOfMedia.stream().filter(i->i.ID.equals(ID)).findAny().orElse(null);
-//		newMedia.ID = ID;
-//		listOfMedia.add(listOfMedia.stream().indexOf(m).findAny().orElse(null));
-//		listOfMedia.remove(m);
-	}
-	
-	public void updateMedia(Media media, Media newMedia) {
-//		newMedia.ID = media.ID;
-//		for(int i = 0; i < listOfMedia.size(); i++) {			
-//			if(listOfMedia.get(i).equals(media)) {
-//				listOfMedia.remove(i);
-//				listOfMedia.add(i, newMedia);
-//			}
-//		}
+		else if(ID.substring(0,1).equals("N")) {
+			((Newspaper) m).updateAllInfo(publishDate, pageCount, author, title, extra);
+		}
+		else if(ID.substring(0,1).equals("M")) {
+			((Map) m).updateAllInfo(publishDate, pageCount, author, title, extra);
+		}
+		else {
+			System.out.println("Invalid ID.");
+		}
 		
 	}
+	
 	
 	//fix this
 	public ArrayList<Media> sortMediaBy(String field, boolean asc) 

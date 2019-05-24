@@ -17,12 +17,10 @@ public class StaffFactory {
 			}
 				
 		}
-		if (staffType.equalsIgnoreCase("RECEPTIONIST")) {
-			return new Receptionist(firstName, secondName);
+		else if(staffType.equalsIgnoreCase("RECEPTIONIST") || staffType.equalsIgnoreCase("ADMIN")) {
+			return hireStaff(staffType, firstName, secondName);
 		}
-		if (staffType.equalsIgnoreCase("ADMIN")) {
-			return new Admin(firstName, secondName);
-		}
+		
 		return null;
 
 	}

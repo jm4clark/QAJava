@@ -68,7 +68,6 @@ public class App {
 		System.out.println(translateFromBinary(s, binary));
 		
 		System.out.println(translateFromBinary(translateToBinary(s1, binary),binary));
-
 	}
 
 	public static String translateFromBinary(String b, HashMap<String, String> binary) {
